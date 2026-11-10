@@ -1,0 +1,55 @@
+<svg width="47" height="53" viewBox="0 0 47 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Desktop - 1">
+<g id="Frame 14">
+<g id="Frame 33">
+<g id="Frame 31">
+<g id="Frame 30">
+<g id="Group 57">
+<rect id="Rectangle 908" x="3.89941" width="38.9929" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 923" y="40.9425" width="46.7914" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 924" y="50.6907" width="46.7914" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 912" x="7.79858" y="5.849" width="31.1943" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 913" x="7.79858" y="29.2448" width="31.1943" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 914" x="7.79858" y="31.1943" width="25.3454" height="1.94964" transform="rotate(-90 7.79858 31.1943)" fill="#FEF6F7"/>
+<rect id="Rectangle 915" x="37.0432" y="31.1943" width="25.3454" height="1.94964" transform="rotate(-90 37.0432 31.1943)" fill="#FEF6F7"/>
+<rect id="Rectangle 909" x="3.89941" y="35.0938" width="38.9929" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 910" x="1.94971" y="35.0938" width="33.1439" height="1.94964" transform="rotate(-90 1.94971 35.0938)" fill="#FEF6F7"/>
+<rect id="Rectangle 911" x="42.8921" y="35.0938" width="33.1439" height="1.94964" transform="rotate(-90 42.8921 35.0938)" fill="#FEF6F7"/>
+<rect id="Rectangle 916" x="19.4966" y="13.6473" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 927" x="5.84888" y="44.8419" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 929" x="5.84888" y="46.7915" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 928" x="7.79858" y="44.8419" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 931" x="37.0432" y="44.452" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 932" x="35.0935" y="44.452" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 933" x="33.144" y="44.452" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 934" x="31.1943" y="44.452" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 935" x="29.2446" y="44.452" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 936" x="27.2952" y="44.452" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 930" x="7.79858" y="46.7915" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 921" x="5.84888" y="37.0431" width="1.94964" height="3.89929" fill="#FEF6F7"/>
+<rect id="Rectangle 925" y="42.8921" width="1.94964" height="7.79857" fill="#FEF6F7"/>
+<rect id="Rectangle 926" x="44.8418" y="42.8921" width="1.94964" height="7.79857" fill="#FEF6F7"/>
+<rect id="Rectangle 922" x="37.0432" y="37.0431" width="1.94964" height="3.89929" fill="#FEF6F7"/>
+<rect id="Rectangle 918" x="19.4966" y="19.4963" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 920" x="21.446" y="21.4462" width="7.79857" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 919" x="29.2446" y="19.4963" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+<rect id="Rectangle 917" x="29.2446" y="13.6473" width="1.94964" height="1.94964" fill="#FEF6F7"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-19.5916" y="-69.2778" width="364.875" height="242.974" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="6.5625" dy="10.9375"/>
+<feGaussianBlur stdDeviation="3.71875"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.990658 0 0 0 0 0.986265 0 0 0 0 0.986265 0 0 0 0.3 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+</defs>
+</svg>
