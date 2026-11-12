@@ -31,12 +31,20 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* every element uses the site cursor set on <html>, links and buttons included */
+  cursor: inherit;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+}
+
+/* Pixel arrow from the info.exe window in Figma, at the same ×1.35 size.
+   Hotspot 0 0 = the tip of the arrow. */
+html {
+  cursor: url('/assets/cursor-site.svg') 0 0, auto;
 }
 
 body {

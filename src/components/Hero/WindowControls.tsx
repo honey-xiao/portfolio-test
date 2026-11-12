@@ -14,7 +14,6 @@ const buttonReset = {
   padding: 0,
   border: 0,
   background: 'none',
-  cursor: 'pointer',
 } as const
 
 /** Minimise / maximise / close pixel buttons from the Figma titlebars. */

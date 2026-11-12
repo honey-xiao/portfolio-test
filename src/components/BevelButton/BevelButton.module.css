@@ -14,7 +14,6 @@
   font-size: var(--fs);
   line-height: normal;
   white-space: nowrap;
-  cursor: pointer;
   /* two-step bevel: outer + inner edges */
   box-shadow:
     inset var(--b) var(--b) 0 0 var(--btn-light-outer),
