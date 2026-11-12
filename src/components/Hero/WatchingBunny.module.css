@@ -4,6 +4,24 @@
   height: 181px;
 }
 
+/* Idle bob while awake and watching the cursor: two frames, up one art pixel and back,
+   like a character standing in a pixel game. Stops while asleep or startled. */
+.bunny[data-mode='awake'],
+.bunny[data-mode='blink'] {
+  animation: bob 0.9s infinite;
+  animation-timing-function: step-end;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4.672px);
+  }
+}
+
 .bunny img {
   position: absolute;
   inset: 0;
@@ -23,7 +41,7 @@
    (4.672px) and disappears, on a loop. Hard steps, no easing. */
 .bunny .z {
   inset: auto;
-  left: 140.63px;
+  left: 145.31px;
   top: 16.35px;
   animation: z-float 2.4s infinite;
   animation-timing-function: step-end;
@@ -51,6 +69,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .bunny[data-mode],
   .bunny .z {
     animation: none;
   }
