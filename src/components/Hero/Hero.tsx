@@ -21,7 +21,10 @@ const ERROR_STACK = [
   { left: 1157, top: 560 },
 ]
 
-type ProjectId = 'lorry' | 'folio' | 'vsl'
+/** How long the laughing bunny stays: pops up, laughs, hides again (matches .laugh in the CSS). */
+const LAUGH_MS = 2200
+
+type ProjectId ='lorry' | 'folio' | 'vsl'
 
 type Project = {
   id: ProjectId
@@ -176,6 +179,22 @@ export default function Hero() {
     })
   }
 
+  // ---- Error windows: the front one closes; the last one can't — the bunny laughs instead ----
+  const [errorsLeft, setErrorsLeft] = useState(ERROR_STACK.length)
+  const [laughing, setLaughing] = useState(false)
+  const laughTimer = useRef(0)
+  useEffect(() => () => clearTimeout(laughTimer.current), [])
+
+  const closeError = () => {
+    if (errorsLeft > 1) {
+      setErrorsLeft((n) => n - 1)
+      return
+    }
+    if (laughing) return
+    setLaughing(true)
+    laughTimer.current = window.setTimeout(() => setLaughing(false), LAUGH_MS)
+  }
+
   const closeProject = (id: ProjectId) => {
     measureFolder(id)
     setProjectPhase(id, prefersReducedMotion() ? 'closed' : 'closing')
@@ -310,19 +329,28 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ---------- stacked Error windows ---------- */}
-        {ERROR_STACK.map((pos, i) => (
+        {/* ---------- laughing bunny: peeks out from behind the last Error window ---------- */}
+        {laughing && (
+          <div className={s.laugh} aria-hidden="true">
+            <img src="/assets/bunny-laugh.svg" alt="" width={186} height={181.77} />
+          </div>
+        )}
+
+        {/* ---------- stacked Error windows: close them one by one, except the last ---------- */}
+        {ERROR_STACK.slice(0, errorsLeft).map((pos, i) => (
           <div
             key={i}
             className={s.error}
             style={{ left: pos.left, top: pos.top }}
-            aria-hidden={i < ERROR_STACK.length - 1 ? true : undefined}
+            aria-hidden={i < errorsLeft - 1 ? true : undefined}
           >
             <div className={s.errorContent}>
               <div className={s.errorTop}>
                 <div className={s.errorTitlebar}>
                   <p>Error</p>
-                  <img src="/assets/ctrl-pos-close.svg" alt="" width={22} height={22} />
+                  <button type="button" className={s.errorClose} onClick={closeError} aria-label="Close error">
+                    <img src="/assets/ctrl-pos-close.svg" alt="" width={22} height={22} />
+                  </button>
                 </div>
                 <p className={s.errorText}>Fatal error: designer not hired yet.</p>
               </div>

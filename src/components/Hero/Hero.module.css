@@ -414,6 +414,65 @@ button.folder {
   color: #fff;
 }
 
+.errorClose {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+/* Laughing bunny. Sits behind the last Error window (1232, 425) and rises over its top edge
+   until the chin shows, laughs (bouncing a pixel), then sinks back. 2.2s total, hard steps:
+   up 0–300ms, laugh, down 1900–2200ms. Pixel = 4.697px at this size. */
+.laugh {
+  left: 1252px;
+  top: 319px;
+  width: 186px;
+  height: 181.77px;
+  animation: laugh-peek 2.2s both;
+  animation-timing-function: step-end;
+}
+
+.laugh img {
+  animation: laugh-bounce 0.24s infinite;
+  animation-timing-function: step-end;
+}
+
+@keyframes laugh-peek {
+  0% {
+    transform: translateY(108px);
+  }
+  4.545% {
+    transform: translateY(70.5px);
+  }
+  9.09% {
+    transform: translateY(32.9px);
+  }
+  13.64%,
+  86.36% {
+    transform: translateY(0);
+  }
+  90.91% {
+    transform: translateY(32.9px);
+  }
+  95.45% {
+    transform: translateY(70.5px);
+  }
+  100% {
+    transform: translateY(108px);
+  }
+}
+
+@keyframes laugh-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4.697px);
+  }
+}
+
 /* ---------- bunny with a mop ---------- */
 
 /* Bunny + pointer at ×0.75 of the Figma size, shifted right; the pointer keeps the same
@@ -460,7 +519,9 @@ button.folder {
 
 @media (prefers-reduced-motion: reduce) {
   .mop,
-  .caret {
+  .caret,
+  .laugh,
+  .laugh img {
     animation: none;
   }
 }
