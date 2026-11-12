@@ -49,7 +49,7 @@ export default function SpeechBubble({ cols: W, rows: H, tail: t, className, chi
           <rect key={`${x}-${y}-${c}`} x={x} y={y} width={w} height={1} fill={c} />
         ))}
       </svg>
-      <p className={s.text} style={{ left: 2 * P, top: 1.5 * P, right: 2 * P, bottom: 3 * P + 1.5 * P }}>
+      <p className={s.text} style={{ left: 3 * P, top: 2 * P, right: 3 * P, bottom: 3 * P + 2 * P }}>
         {children}
       </p>
     </div>

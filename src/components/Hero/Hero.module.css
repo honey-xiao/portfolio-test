@@ -124,7 +124,7 @@ button.folder {
 /* Speech bubble with the positioning statement: 16px below the top of the screen,
    tail ending just left of the bunny. */
 .bubble {
-  left: 168px;
+  left: 150px;
   top: 74.5px;
 }
 

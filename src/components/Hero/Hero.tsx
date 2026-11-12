@@ -244,7 +244,7 @@ export default function Hero() {
           </nav>
 
           {/* The bunny introduces Alisa — this is also the positioning statement. */}
-          <SpeechBubble className={s.bubble} cols={37} rows={11} tail={32}>
+          <SpeechBubble className={s.bubble} cols={39} rows={12} tail={34}>
             Hello! I am Alisa or Xiao. I’m a UI/UX designer for product teams — I design mobile apps
             and B2B web products, with a focus on clear logic and clean developer handoff.
           </SpeechBubble>
