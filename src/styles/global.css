@@ -41,7 +41,7 @@ body {
   padding: 0;
 }
 
-/* Pixel arrow from the info.exe window in Figma, at the same ×1.35 size.
+/* Pixel arrow from the info.exe window in Figma, 1 screen px per art pixel (12×19).
    Hotspot 0 0 = the tip of the arrow. */
 html {
   cursor: url('/assets/cursor-site.svg') 0 0, auto;

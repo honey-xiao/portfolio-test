@@ -225,7 +225,6 @@ export default function Hero() {
             ))}
           </nav>
 
-          <img className={s.cursor} src="/assets/cursor.svg" alt="" />
           <img
             className={s.bubble}
             src="/assets/speech-bubble.svg"
