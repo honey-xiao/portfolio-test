@@ -9,8 +9,49 @@
   inset: 0;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 /* Eye highlight (#FAC2CA in the Figma art). Jumps between positions — no transition. */
 .highlight {
   position: absolute;
   background: #fac2ca;
+}
+
+/* Sleeping "Z" — where it sits in the Figma frame, then floats up one art pixel at a time
+   (4.672px) and disappears, on a loop. Hard steps, no easing. */
+.bunny .z {
+  inset: auto;
+  left: 140.63px;
+  top: 16.35px;
+  animation: z-float 2.4s infinite;
+  animation-timing-function: step-end;
+}
+
+@keyframes z-float {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(2.336px, -4.672px);
+  }
+  50% {
+    transform: translate(0, -9.344px);
+  }
+  75% {
+    transform: translate(2.336px, -14.016px);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bunny .z {
+    animation: none;
+  }
 }
