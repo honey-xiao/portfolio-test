@@ -1,0 +1,19 @@
+.bubble {
+  position: absolute;
+}
+
+.art {
+  position: absolute;
+  inset: 0;
+}
+
+.text {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--text);
+}

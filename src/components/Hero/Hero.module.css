@@ -43,10 +43,12 @@
   position: absolute;
 }
 
+/* One even 11px gap (12px from the outer edge, with the border) all round: window edge →
+   titlebar → screen → buttons → window edge. Inner box is 647.57×418.73. */
 .infoTitlebar {
-  left: 10.96px;
-  top: 13.39px;
-  width: 630.524px;
+  left: 11px;
+  top: 11px;
+  width: 625.57px;
   height: 36.517px;
   padding: 1.217px 14.607px 0;
   background: var(--titlebar);
@@ -63,23 +65,23 @@
 }
 
 .infoScreen {
-  left: 10.96px;
-  top: 63.3px;
-  width: 630.524px;
-  height: 294.569px;
+  left: 11px;
+  top: 58.52px;
+  width: 625.57px;
+  height: 289.52px;
   background: linear-gradient(to bottom, var(--panel), var(--panel-gradient-end));
 }
 
 .infoDecor {
   left: 143.63px;
-  top: 75.47px;
+  top: 70px;
   width: 491px;
   height: 278px;
 }
 
 .folders {
   left: 43.82px;
-  top: 88.86px;
+  top: 84.08px;
   width: 79.444px;
   display: flex;
   flex-direction: column;
@@ -119,23 +121,24 @@ button.folder {
 }
 
 
+/* Speech bubble with the positioning statement: 16px below the top of the screen,
+   tail ending just left of the bunny. */
 .bubble {
-  left: 230.06px;
-  top: 87.64px;
-  width: 257px;
-  height: 90px;
+  left: 168px;
+  top: 74.5px;
 }
 
 .bunny {
   left: 446.72px;
-  top: 144.85px;
+  top: 140.07px;
   width: 186px;
   height: 181px;
 }
 
 .infoButtons {
-  left: 91.29px;
-  top: 365.17px;
+  /* centred: (647.57 − 3×146.07 − 2×14.61) / 2 */
+  left: 90.08px;
+  top: 359.04px;
   display: flex;
   align-items: center;
   gap: 14.607px;
@@ -309,60 +312,6 @@ button.folder {
   height: 120px;
 }
 
-/* ---------- Positioning ---------- */
-
-/* Figma size 256×344, drawn at ×0.8 (≈205×275). Its top edge overlaps the bottom frame
-   of info.exe (ends at y 597) but stays below the About me button (ends at y 588). */
-.positioning {
-  --zoom: 0.8;
-  zoom: var(--zoom);
-  left: calc(27px / var(--zoom));
-  top: calc(590px / var(--zoom));
-  width: 256px;
-  height: 344px;
-  border-width: 1px;
-}
-
-.positioning > * {
-  position: absolute;
-}
-
-.posTitlebar {
-  left: 9px;
-  top: 11px;
-  height: 30px;
-  padding: 1px 12px 0;
-  background: var(--titlebar);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.posTitle {
-  font-family: var(--font-pixel);
-  font-size: 24px;
-  color: #fff;
-  white-space: nowrap;
-}
-
-.posBody {
-  left: 9px;
-  top: 52px;
-  width: 238px;
-  padding: 12px 8px;
-  background: var(--panel);
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: normal;
-  color: var(--text);
-}
-
-.posOk {
-  left: 68px;
-  top: 294px;
-}
-
 /* ---------- Error stack ---------- */
 
 .error {
@@ -421,12 +370,10 @@ button.folder {
   background: none;
 }
 
-/* Laughing bunny. Sits behind the last Error window (1232, 425) and rises over its top edge
-   until the chin shows, laughs (bouncing a pixel), then sinks back. 2.2s total, hard steps:
-   up 0–300ms, laugh, down 1900–2200ms. Pixel = 4.697px at this size. */
+/* Laughing bunny. Sits behind the last Error window (left/top set inline from its position)
+   and rises over its top edge until the chin shows, laughs (bouncing a pixel), then sinks
+   back. 2.2s total, hard steps: up 0–300ms, laugh, down 1900–2200ms. Pixel = 4.697px. */
 .laugh {
-  left: 1252px;
-  top: 319px;
   width: 186px;
   height: 181.77px;
   animation: laugh-peek 2.2s both;
@@ -473,52 +420,7 @@ button.folder {
   }
 }
 
-/* ---------- bunny with a mop ---------- */
-
-/* Bunny + pointer at ×0.75 of the Figma size, shifted right; the pointer keeps the same
-   offset from the bunny as in Figma, so it aims up-left at the Positioning window. */
-.bunnySmile {
-  left: 225px;
-  top: 881px;
-  width: 146.25px;
-  height: 141.75px;
-}
-
-/* Figma motion: ±14° swing around the centre, 2 s loop, ease-in-out */
-.mop {
-  left: 182px;
-  top: 880px;
-  width: 51px;
-  height: 57px;
-  transform-origin: 50% 50%;
-  animation: mop-swing 2s infinite;
-}
-
-@keyframes mop-swing {
-  0% {
-    transform: rotate(0deg);
-    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  20.15% {
-    transform: rotate(14deg);
-    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  39.65% {
-    transform: rotate(0deg);
-    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  59.6% {
-    transform: rotate(-14deg);
-    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  79.6%,
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .mop,
   .caret,
   .laugh,
   .laugh img {
