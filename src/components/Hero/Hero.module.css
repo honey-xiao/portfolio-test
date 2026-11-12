@@ -26,9 +26,15 @@
 
 /* ---------- info.exe ---------- */
 
+/* Laid out at the Figma size 650×421 and enlarged ×1.35 (→ ~878×569) with `zoom`, not
+   `transform`: zoom re-lays the window out at the bigger size, so text is drawn crisp
+   at ~16px instead of a 12px bitmap being stretched. zoom also multiplies the element's
+   own left/top, hence the division. */
 .info {
-  left: 28px;
-  top: 32px;
+  --zoom: 1.35;
+  zoom: var(--zoom);
+  left: calc(28px / var(--zoom));
+  top: calc(28px / var(--zoom));
   width: 650px;
   height: 421.161px;
 }
@@ -93,6 +99,13 @@
   white-space: nowrap;
 }
 
+button.folder {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
 .folder img {
   transition: transform 0.15s steps(2);
 }
@@ -135,28 +148,11 @@
   gap: 14.607px;
 }
 
-/* ---------- project windows ---------- */
-
-.lorry {
-  left: 1056px;
-  top: 51px;
-}
-
-.folio {
-  left: 685px;
-  top: 19px;
-}
-
-.vsl {
-  left: 866px;
-  top: 230px;
-}
-
 /* ---------- cmd.exe ---------- */
 
 .cmd {
-  left: 597px;
-  top: 425px;
+  left: 1062px;
+  top: 28px;
   width: 350px;
   height: 240px;
   padding: 2.917px 2.917px 11.667px;
@@ -322,9 +318,13 @@
 
 /* ---------- Positioning ---------- */
 
+/* Figma size 256×344, drawn at ×0.8 (≈205×275). Its top edge overlaps the bottom frame
+   of info.exe (ends at y 597) but stays below the About me button (ends at y 588). */
 .positioning {
-  left: 27px;
-  top: 472px;
+  --zoom: 0.8;
+  zoom: var(--zoom);
+  left: calc(27px / var(--zoom));
+  top: calc(590px / var(--zoom));
   width: 256px;
   height: 344px;
   border-width: 1px;
@@ -423,19 +423,21 @@
 
 /* ---------- bunny with a mop ---------- */
 
+/* Bunny + pointer at ×0.75 of the Figma size, shifted right; the pointer keeps the same
+   offset from the bunny as in Figma, so it aims up-left at the Positioning window. */
 .bunnySmile {
-  left: 138px;
-  top: 835px;
-  width: 195px;
-  height: 189px;
+  left: 225px;
+  top: 881px;
+  width: 146.25px;
+  height: 141.75px;
 }
 
 /* Figma motion: ±14° swing around the centre, 2 s loop, ease-in-out */
 .mop {
-  left: 81px;
-  top: 834px;
-  width: 68px;
-  height: 76px;
+  left: 182px;
+  top: 880px;
+  width: 51px;
+  height: 57px;
   transform-origin: 50% 50%;
   animation: mop-swing 2s infinite;
 }

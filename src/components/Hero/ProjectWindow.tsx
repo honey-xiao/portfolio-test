@@ -4,38 +4,66 @@ import WindowControls from './WindowControls.tsx'
 import s from './ProjectWindow.module.css'
 
 type Props = {
-  className: string
+  left: number
+  top: number
   height: number
+  zIndex: number
   title: string
   controls: 'lorry' | 'folio' | 'vsl'
   path: string
   description: ReactNode
+  /** Pixel computer icon: Group 57 (web, 47×53) or Group 59 (mobile, 47×65) */
+  icon: 'web' | 'mobile'
   viewHref?: string
+  onClose: () => void
+  onFocus: () => void
+}
+
+const ICONS = {
+  web: { src: '/assets/computer.svg', width: 47, height: 53 },
+  mobile: { src: '/assets/computer-mobile.svg', width: 47, height: 65 },
 }
 
 /** Case-study card drawn as a retro OS window (Folio.app, VSL.app, LorryDesk.exe). */
 export default function ProjectWindow({
-  className,
+  left,
+  top,
   height,
+  zIndex,
   title,
   controls,
   path,
   description,
+  icon,
   viewHref = '#projects',
+  onClose,
+  onFocus,
 }: Props) {
   return (
-    <article className={`${s.window} ${className}`} style={{ height }}>
+    <article
+      className={s.window}
+      style={{ left, top, height, zIndex }}
+      onMouseDown={onFocus}
+      onFocus={onFocus}
+      aria-label={title}
+    >
       <div className={s.content}>
         <div className={s.top}>
           <div className={s.header}>
             <div className={s.titlebar}>
               <h2 className={s.title}>{title}</h2>
-              <WindowControls variant={controls} size={20.588} gap={3.743} />
+              <WindowControls
+                variant={controls}
+                size={20.588}
+                gap={3.743}
+                onClose={onClose}
+                closeLabel={`Close ${title}`}
+              />
             </div>
             <p className={s.path}>{path}</p>
           </div>
           <div className={s.body}>
-            <img src="/assets/computer.svg" alt="" width={47} height={53} />
+            <img src={ICONS[icon].src} alt="" width={ICONS[icon].width} height={ICONS[icon].height} />
             <p className={s.description}>{description}</p>
           </div>
         </div>

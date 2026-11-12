@@ -1,0 +1,46 @@
+/* Old-Windows window animation: an outline with a titlebar strip that grows
+   in discrete jumps — steps(), no easing, so it reads as pixel motion. */
+.rect {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  border: 3px solid var(--titlebar);
+  border-top-width: 12px;
+  animation: zoom 320ms steps(6, jump-none) forwards;
+}
+
+.reverse {
+  animation-name: unzoom;
+  animation-duration: 240ms;
+  animation-timing-function: steps(5, jump-none);
+}
+
+@keyframes zoom {
+  from {
+    left: var(--fx);
+    top: var(--fy);
+    width: var(--fw);
+    height: var(--fh);
+  }
+  to {
+    left: var(--tx);
+    top: var(--ty);
+    width: var(--tw);
+    height: var(--th);
+  }
+}
+
+@keyframes unzoom {
+  from {
+    left: var(--tx);
+    top: var(--ty);
+    width: var(--tw);
+    height: var(--th);
+  }
+  to {
+    left: var(--fx);
+    top: var(--fy);
+    width: var(--fw);
+    height: var(--fh);
+  }
+}
