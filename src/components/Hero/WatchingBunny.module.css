@@ -1,0 +1,16 @@
+.bunny {
+  position: absolute;
+  width: 186px;
+  height: 181px;
+}
+
+.bunny img {
+  position: absolute;
+  inset: 0;
+}
+
+/* Eye highlight (#FAC2CA in the Figma art). Jumps between positions — no transition. */
+.highlight {
+  position: absolute;
+  background: #fac2ca;
+}

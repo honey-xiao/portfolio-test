@@ -3,6 +3,7 @@ import BevelButton from '../BevelButton/BevelButton.tsx'
 import WindowControls from './WindowControls.tsx'
 import ProjectWindow from './ProjectWindow.tsx'
 import ZoomRect, { type Rect } from './ZoomRect.tsx'
+import WatchingBunny from './WatchingBunny.tsx'
 import s from './Hero.module.css'
 
 /** Size of the Figma frame "Desktop - 1" — the whole hero is laid out on this canvas. */
@@ -230,7 +231,7 @@ export default function Hero() {
             src="/assets/speech-bubble.svg"
             alt="Hello! I am Alisa or Xiao. There you can find all information!"
           />
-          <img className={s.bunny} src="/assets/bunny.svg" alt="Pink pixel bunny with a third eye" />
+          <WatchingBunny className={s.bunny} />
 
           <div className={s.infoButtons}>
             <BevelButton href="#about" width={146.067} height={48.689} bevel={1.217} fontSize={20}>
